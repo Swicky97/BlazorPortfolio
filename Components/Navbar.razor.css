@@ -1,0 +1,20 @@
+﻿body {
+
+}
+
+.navbar__container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar__link {
+    font-size: 2rem;
+    text-decoration: none;
+    padding: 1rem 1rem;
+}
+
+.navbar__link--active {
+
+}
