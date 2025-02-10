@@ -9,12 +9,59 @@
     align-items: center;
 }
 
+.navbar__link--box {
+    position: relative;
+    margin: 1rem 1rem;
+    padding: 3px 5px;
+    --border-thickness: 2px;
+    --border-color: var(--blue-color);
+    --corner-size: 10px;
+    outline: var(--border-thickness) solid transparent;
+}
+
+    .navbar__link--box::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        background: 
+            conic-gradient( from 90deg at top var(--border-thickness) left var(--border-thickness), transparent 85deg, var(--border-color) 0 ) 0 0 / var(--corner-size) var(--corner-size) border-box no-repeat, 
+            conic-gradient( from 180deg at top var(--border-thickness) right var(--border-thickness), transparent 85deg, var(--border-color) 0 ) 100% 0 / var(--corner-size) var(--corner-size) border-box no-repeat, 
+            conic-gradient( from 0deg at bottom var(--border-thickness) left var(--border-thickness), transparent 85deg, var(--border-color) 0 ) 0 100% / var(--corner-size) var(--corner-size) border-box no-repeat, 
+            conic-gradient( from -90deg at bottom var(--border-thickness) right var(--border-thickness), transparent 85deg, var(--border-color) 0 ) 100% 100% / var(--corner-size) var(--corner-size) border-box no-repeat;
+    }
+
+    .navbar__link--box:hover::before {
+        opacity: 1;
+    }
+
 .navbar__link {
+    position: relative;
     font-size: 2rem;
     text-decoration: none;
-    padding: 1rem 1rem;
+    padding: 4px;
+    z-index: 0;
+    color: var(--text-color, black);
+    transition: color 0.5s ease-in-out;
 }
 
-.navbar__link--active {
+    .navbar__link:hover {
+        outline: 1px dashed var(--lightBlue-color);
+        color: var(--blue-color);
+    }
 
-}
+    .navbar__link::after {
+        content: "";
+        position: absolute;
+        inset: -4px;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        pointer-events: none;
+    }
+
+    .navbar__link:hover::after {
+        opacity: 1;
+    }
+
+
