@@ -10,12 +10,13 @@
 }
 
 .navbar__link--box {
-    position: relative;
-    margin: 1rem 1rem;
-    padding: 3px 5px;
     --border-thickness: 2px;
     --border-color: var(--blue-color);
     --corner-size: 10px;
+
+    position: relative;
+    margin: 1rem 1rem;
+    padding: 3px 5px;
     outline: var(--border-thickness) solid transparent;
 }
 
@@ -49,6 +50,7 @@
     .navbar__link:hover {
         outline: 1px dashed var(--lightBlue-color);
         color: var(--blue-color);
+        cursor: pointer;
     }
 
     .navbar__link::after {
