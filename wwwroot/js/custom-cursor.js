@@ -9,6 +9,16 @@ window.initializeCustomCursor = () => {
         mouseY = e.clientY;
     });
 
+    // Disable cursor on certain elements
+    document.querySelectorAll('button, a, input').forEach((element) => {
+        element.addEventListener('mouseenter', () => {
+            cursor.classList.add('cursor--hidden');
+        });
+        element.addEventListener('mouseleave', () => {
+            cursor.classList.remove('cursor--hidden');
+        });
+    });
+
     // Adjust the value for a looser or tighter follow effect
     const mouseFollowIntensity = 0.1;
     function animateCursor() {
