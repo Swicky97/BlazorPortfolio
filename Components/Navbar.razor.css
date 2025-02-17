@@ -1,13 +1,11 @@
-﻿.navbar {
-    width: 100%;
-    padding: 10px 0;
-}
-
-.navbar__container {
+﻿.navbar__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
     width: 100%;
+    height: 8vh;
+    background: pink;
 }
 
 .navbar__links-container {
@@ -24,14 +22,10 @@
     margin-left: 1rem;
 }
 
-.navbar__home {
-    
-}
-
 .navbar__link-container {
     position: relative;
     margin: 1rem;
-    padding: 3px 5px;
+    padding: 2px 5px;
     --border-thickness: 2px;
     --border-color: var(--blue-color);
     --corner-size: 10px;
@@ -54,8 +48,8 @@
 .navbar__link {
     position: relative;
     font-size: 24px;
+    padding: 2px 6px 2px 6px;
     text-decoration: none;
-    padding: 4px;
     color: var(--text-color, black);
     z-index: 0;
     transition: color 0.5s ease-in-out;
