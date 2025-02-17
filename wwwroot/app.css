@@ -10,9 +10,19 @@
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
 a {
     color: var(--text-color);
+}
+
+.page-container {
+    max-width: 1200px;
+    width: 100%;
+    flex-grow: 1;
 }
 
