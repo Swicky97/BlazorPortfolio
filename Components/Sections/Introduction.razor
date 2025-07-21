@@ -1,36 +1,89 @@
-﻿<div class="intro__container">
+﻿@inject IJSRuntime JS
+
+<div class="intro__container">
     <div class="left-column">
-        <div class="image__inner-border">
+        <div class="image-border">
             <div class="track-wrapper">
                 <div class="orbit-icon" style="animation-delay: 0s;">
-                    <div class="orbit-circle">
+                    <div class="orbit-circle" @onclick='() => SelectTech("Blazor")'>
                         <img src="images/blazor.png" alt="Icon 1" />
                     </div>
                 </div>
                 <div class="orbit-icon" style="animation-delay: -8s;">
-                    <div class="orbit-circle">
+                    <div class="orbit-circle" @onclick='() => SelectTech("C#")'>
                         <img src="images/csharp.png" alt="Icon 2" />
                     </div>
                 </div>
                 <div class="orbit-icon" style="animation-delay: -16s;">
-                    <div class="orbit-circle">
+                    <div class="orbit-circle" @onclick='() => SelectTech("React")'>
                         <img src="images/react.png" alt="Icon 3" />
                     </div>
                 </div>
                 <div class="orbit-icon" style="animation-delay: -24s;">
-                    <div class="orbit-circle">
+                    <button class="orbit-circle" @onclick='() => SelectTech("Azure")'>
                         <img src="images/azure.png" alt="Icon 4" />
-                    </div>
+                    </button>
                 </div>
             </div>
-
             <div class="intro__header-image">
                 <img src="images/owl.jpeg" alt="Owl" />
             </div>
         </div>
+        @if (!string.IsNullOrEmpty(selectedTech))
+        {
+            <div class="tech-label" @ref="techLabelRef" @key="selectedTech">
+                @selectedTech
+            </div>
+        }
     </div>
 
     <div class="right-column">
-        <h1>Big text</h1>
+        <div class="intro__text">
+            <h1>@displayedText<span class="cursor">|</span></h1>
+        </div>
     </div>
+
 </div>
+
+@code {
+    private string? selectedTech;
+    private ElementReference techLabelRef;
+    private string fullText = "Hi, I'm Chase — a Full Stack .NET Developer.";
+    private string displayedText = "";
+    private int charIndex = 0;
+    private Timer? typingTimer;
+
+    private async Task SelectTech(string tech)
+    {
+        selectedTech = tech;
+        await Task.Delay(50);
+        await JS.InvokeVoidAsync("restartFadeIn", techLabelRef);
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            StartTypingEffect();
+        }
+    }
+
+    private void StartTypingEffect()
+    {
+        typingTimer = new Timer(TypingCallback, null, 100, 120);
+    }
+
+    private void TypingCallback(object? state)
+    {
+        if (charIndex < fullText.Length)
+        {
+            displayedText += fullText[charIndex];
+            charIndex++;
+            InvokeAsync(StateHasChanged);
+        }
+        else
+        {
+            typingTimer?.Dispose();
+        }
+    }
+}
