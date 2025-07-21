@@ -10,7 +10,7 @@ window.initializeCustomCursor = () => {
     });
 
     // Disable cursor on certain elements
-    document.querySelectorAll('button, a, input').forEach((element) => {
+    document.querySelectorAll('button, a, input, .orbit-circle').forEach((element) => {
         element.addEventListener('mouseenter', () => {
             cursor.classList.add('cursor--hidden');
         });

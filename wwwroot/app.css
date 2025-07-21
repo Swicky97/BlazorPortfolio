@@ -1,15 +1,18 @@
 :root {
-    --lightBlue-color: #1EC8D4; 
-    --blue-color: #463FCC;
-    --background-color: #FFFFFF;
-    --text-color: #3A4242; 
-    --lightGray-color: #e4e4e4;
-    --gray-color: #6b7688;
+    --lightBlue: #1EC8D4;
+    --blue: #463FCC;
+    --lightCyan: #E0FFFF;
+
+    --lightGray: #e4e4e4;
+    --gray: #6b7688;
+
+    --background: #FFFFFF;
+    --text: #3A4242;
 }
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: var(--background-color);
+    background: var(--background);
     display: flex;
     justify-content: center;
     min-height: 100vh;
@@ -17,7 +20,7 @@ html, body {
 }
 
 a {
-    color: var(--text-color);
+    color: var(--text);
 }
 
 .page-container {
