@@ -39,7 +39,7 @@
 
     <div class="right-column">
         <div class="intro__text">
-            <h1>@displayedText<span class="cursor">|</span></h1>
+            <h1>@(string.IsNullOrEmpty(displayedText) ? " " : displayedText)<span class="typing-cursor">|</span></h1>
         </div>
     </div>
 
@@ -77,7 +77,7 @@
     {
         if (charIndex < fullText.Length)
         {
-            displayedText += fullText[charIndex];
+            displayedText = fullText.Substring(0, charIndex + 1);
             charIndex++;
             InvokeAsync(StateHasChanged);
         }

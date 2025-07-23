@@ -1,6 +1,11 @@
 ﻿.intro__container {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('images/Background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
-    height: 92vh;
+    width: 100vw;
+    height: 94vh;
 }
 
 .left-column {
@@ -106,11 +111,14 @@
     overflow: hidden;
 }
 
-.cursor {
+.typing-cursor {
+    position: relative;
+    top: -6px;
     display: inline-block;
     width: 1ch;
-    animation: blink 0.7s infinite;
+    animation: blink 0.7s steps(1) infinite;
     color: var(--lightBlue);
+    vertical-align: middle;
 }
 
 @keyframes blink {

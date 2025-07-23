@@ -3,7 +3,7 @@
     --blue: #463FCC;
     --lightCyan: #E0FFFF;
 
-    --lightGray: #e4e4e4;
+    --lightGray: #F0F1F2;
     --gray: #6b7688;
 
     --background: #FFFFFF;
@@ -23,10 +23,4 @@ a {
     color: var(--text);
 }
 
-.page-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 1200px;
-    width: 100vw;
-}
 
