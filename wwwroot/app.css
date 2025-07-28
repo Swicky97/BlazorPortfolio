@@ -7,9 +7,9 @@
     --background: #FFFFFF;
     --text: #3A4242;
     --intro-header-img-width: min(30vw, 220px);
-    --track-cloud-width: min(40vw, 340px);
-    --track-backend-width: min(50vw, 460px);
-    --track-frontend-width: min(60vw, 580px);
+    --track-cloud-width: min(40vw, 320px);
+    --track-backend-width: min(50vw, 420px);
+    --track-frontend-width: min(60vw, 520px);
     --aspect-ratio: 1.33;
 }
 
