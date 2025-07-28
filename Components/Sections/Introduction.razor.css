@@ -30,6 +30,7 @@
 .image-border {
     position: relative;
     display: inline-block;
+    width: 100%
 }
 
 .dashed-rectangle {
@@ -108,8 +109,8 @@
 
 .intro__header-image {
     position: absolute;
-    width: 220px;
-    height: 280px;
+    width: var(--intro-header-img-width);
+    height: calc(var(--intro-header-img-width) * var(--aspect-ratio));
     outline: 2px dashed var(--lightBlue);
     top: 50%;
     left: 50%;
@@ -229,29 +230,6 @@
     .intro__text h1 {
         white-space: normal;
         font-size: clamp(1.6rem, 6vw, 2.2rem);
-    }
-
-    .intro__header-image {
-        width: 30vw;
-        height: calc(30vw * 1.33);
-    }
-
-    .dashed-rectangle.frontend,
-    .track-frontend {
-        width: var(--track-frontend-width-mobile);
-        height: calc(var(--track-frontend-width-mobile) * var(--aspect-ratio));
-    }
-
-    .dashed-rectangle.backend,
-    .track-backend {
-        width: var(--track-backend-width-mobile);
-        height: calc(var(--track-backend-width-mobile) * var(--aspect-ratio));
-    }
-
-    .dashed-rectangle.cloud,
-    .track-cloud {
-        width: var(--track-cloud-width-mobile);
-        height: calc(var(--track-cloud-width-mobile) * var(--aspect-ratio));
     }
 }
 
