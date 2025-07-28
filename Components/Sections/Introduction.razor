@@ -3,16 +3,14 @@
 <div class="intro__container">
     <div class="left-column">
         <div class="image-border">
-            <!-- Dashed circular borders -->
-            <div class="dashed-rect outer"></div>
-            <div class="dashed-rect middle"></div>
-            <div class="dashed-rect inner"></div>
+            <div class="dashed-rectangle frontend"></div>
+            <div class="dashed-rectangle backend"></div>
+            <div class="dashed-rectangle cloud"></div>
 
-            <!-- Orbit tracks -->
             <div class="track-wrapper track-cloud">
                 <div class="orbit-icon" style="animation-delay: 0s;">
                     <div class="orbit-circle" @onclick='() => SelectTech("Azure")'>
-                        <img src="images/azure.png" alt="Azure" />
+                        <img src="images/Icons/azure.png" alt="Azure" />
                     </div>
                 </div>
             </div>
@@ -20,73 +18,52 @@
             <div class="track-wrapper track-backend">
                 <div class="orbit-icon" style="animation-delay: 0s;">
                     <div class="orbit-circle" @onclick='() => SelectTech("C#")'>
-                        <img src="images/csharp.png" alt="C#" />
+                        <img src="images/Icons/csharp.png" alt="C#" />
                     </div>
                 </div>
                 <div class="orbit-icon" style="animation-delay: -16s;">
                     <div class="orbit-circle" @onclick='() => SelectTech("SQL")'>
-                        <img src="images/sql.png" alt="SQL" />
+                        <img src="images/Icons/sql.png" alt="SQL" />
                     </div>
                 </div>
                 <div class="orbit-icon" style="animation-delay: -32s;">
                     <div class="orbit-circle" @onclick='() => SelectTech("Docker")'>
-                        <img src="images/docker.png" alt="Docker" />
+                        <img src="images/Icons/docker.png" alt="Docker" />
                     </div>
                 </div>
                 <div class="orbit-icon" style="animation-delay: -48s;">
                     <div class="orbit-circle" @onclick='() => SelectTech("Rest API")'>
-                        <img src="images/API.png" alt="API" />
+                        <img src="images/Icons/API.png" alt="API" />
                     </div>
                 </div>
-                <!-- Add more backend icons as needed -->
             </div>
 
             <div class="track-wrapper track-frontend">
                 <div class="orbit-icon" style="animation-delay: 0s;">
                     <div class="orbit-circle" @onclick='() => SelectTech("React")'>
-                        <img src="images/react.png" alt="React" />
-                    </div>
-                </div>
-                <div class="orbit-icon" style="animation-delay: -8s;">
-                    <div class="orbit-circle" @onclick='() => SelectTech("Blazor")'>
-                        <img src="images/blazor.png" alt="Blazor" />
+                        <img src="images/Icons/react.png" alt="React" />
                     </div>
                 </div>
                 <div class="orbit-icon" style="animation-delay: -16s;">
-                    <div class="orbit-circle" @onclick='() => SelectTech("HTML 5")'>
-                        <img src="images/HTML.png" alt="HTML" />
-                    </div>
-                </div>
-                <div class="orbit-icon" style="animation-delay: -24s;">
-                    <div class="orbit-circle" @onclick='() => SelectTech("Javascript")'>
-                        <img src="images/javascript.png" alt="JS" />
+                    <div class="orbit-circle" @onclick='() => SelectTech("Blazor")'>
+                        <img src="images/Icons/blazor.png" alt="Blazor" />
                     </div>
                 </div>
                 <div class="orbit-icon" style="animation-delay: -32s;">
-                    <div class="orbit-circle" @onclick='() => SelectTech("Typescript")'>
-                        <img src="images/typescript.png" alt="Blazor" />
-                    </div>
-                </div>
-                <div class="orbit-icon" style="animation-delay: -40s;">
-                    <div class="orbit-circle" @onclick='() => SelectTech("CSS")'>
-                        <img src="images/css.png" alt="CSS" />
+                    <div class="orbit-circle" @onclick='() => SelectTech("HTML 5")'>
+                        <img src="images/Icons/HTML.png" alt="HTML" />
                     </div>
                 </div>
                 <div class="orbit-icon" style="animation-delay: -48s;">
-                    <div class="orbit-circle" @onclick='() => SelectTech("SASS")'>
-                        <img src="images/sass.png" alt="SASS" />
-                    </div>
-                </div>
-                <div class="orbit-icon" style="animation-delay: -56s;">
-                    <div class="orbit-circle" @onclick='() => SelectTech("Tailwind")'>
-                        <img src="images/tailwind.png" alt="Tailwind" />
+                    <div class="orbit-circle" @onclick='() => SelectTech("Javascript")'>
+                        <img src="images/Icons/javascript.png" alt="JS" />
                     </div>
                 </div>
             </div>
 
             <!-- Center image -->
             <div class="intro__header-image">
-                <img src="images/owl.jpeg" alt="Owl" />
+                <img src="images/Headshot.png" alt="Me :)" />
             </div>
         </div>
 

@@ -5,10 +5,11 @@
     background-repeat: no-repeat;
     display: flex;
     width: 100vw;
-    height: 94vh;
+    height: calc(100vh - 70px);
 }
 
 .left-column {
+    position: relative;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -28,22 +29,12 @@
     align-items: flex-start;
 }
 
-.image-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    max-width: 100%;
-    width: 100%;
-}
-
 .image-border {
     position: relative;
     display: inline-block;
-    padding: 60px;
 }
 
-.dashed-rect {
+.dashed-rectangle {
     position: absolute;
     border: 2px dashed var(--lightBlue);
     pointer-events: none;
@@ -51,24 +42,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
-    /* Outer rectangle */
-    .dashed-rect.outer {
-        width: 520px; 
-        height: 580px;
-    }
-
-    /* Middle rectangle */
-    .dashed-rect.middle {
-        width: 420px;
-        height: 480px;
-    }
-
-    /* Inner rectangle */
-    .dashed-rect.inner {
-        width: 320px;
-        height: 380px;
-    }
 
 .track-wrapper {
     position: absolute;
@@ -79,22 +52,22 @@
     pointer-events: none;
 }
 
-.track-frontend {
-    width: 520px;
-    height: 580px;
-    z-index: 4;
+.track-frontend,
+.dashed-rectangle.frontend {
+    width: var(--track-frontend-width);
+    height: calc(var(--track-frontend-width) * var(--aspect-ratio));
 }
 
-.track-backend {
-    width: 420px;
-    height: 480px;
-    z-index: 5;
+.track-backend,
+.dashed-rectangle.backend {
+    width: var(--track-backend-width);
+    height: calc(var(--track-backend-width) * var(--aspect-ratio));
 }
 
-.track-cloud {
-    width: 320px;
-    height: 380px;
-    z-index: 6;
+.track-cloud,
+.dashed-rectangle.cloud {
+    width: var(--track-cloud-width);
+    height: calc(var(--track-cloud-width) * var(--aspect-ratio));
 }
 
 .orbit-icon {
@@ -119,7 +92,7 @@
     padding: 10px;
     border: 2px dashed var(--lightBlue);
     transition: box-shadow 0.3s ease;
-    pointer-events: auto; /* so click works */
+    pointer-events: auto;
 }
 
     .orbit-circle:hover {
@@ -137,16 +110,21 @@
 
 .intro__header-image {
     position: absolute;
+    width: 220px;
+    height: 280px;
+    border: 2px dashed var(--lightBlue);
     top: 50%;
     left: 50%;
-    width: 200px;
-    height: 300px;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 20;
 }
+
+    .intro__header-image img {
+        width: 100%;
+        height: 100%;
+    }
 
 .tech-label {
     margin-top: 1.5rem;
@@ -200,7 +178,6 @@
     }
 }
 
-/* Basic orbit animation - you can adjust for each track as desired */
 @keyframes moveAround {
     0% {
         top: 0;
@@ -232,3 +209,50 @@
         transform: translate(-50%, -50%);
     }
 }
+
+@media (max-width: 992px) {
+    .intro__container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 30vh;
+    }
+
+    .left-column,
+    .right-column {
+        width: 100%;
+    }
+
+    .right-column {
+        align-items: center;
+        bottom: 50px;
+    }
+
+    .intro__text h1 {
+        white-space: normal;
+        font-size: clamp(1.6rem, 6vw, 2.2rem);
+    }
+
+    .intro__header-image {
+        width: 30vw;
+        height: calc(30vw * 1.33);
+    }
+
+    .dashed-rectangle.frontend,
+    .track-frontend {
+        width: var(--track-frontend-width-mobile);
+        height: calc(var(--track-frontend-width-mobile) * var(--aspect-ratio));
+    }
+
+    .dashed-rectangle.backend,
+    .track-backend {
+        width: var(--track-backend-width-mobile);
+        height: calc(var(--track-backend-width-mobile) * var(--aspect-ratio));
+    }
+
+    .dashed-rectangle.cloud,
+    .track-cloud {
+        width: var(--track-cloud-width-mobile);
+        height: calc(var(--track-cloud-width-mobile) * var(--aspect-ratio));
+    }
+}
+

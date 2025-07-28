@@ -2,12 +2,17 @@
     --lightBlue: #1EC8D4;
     --blue: #463FCC;
     --lightCyan: #E0FFFF;
-
     --lightGray: #F0F1F2;
     --gray: #6b7688;
-
     --background: #FFFFFF;
     --text: #3A4242;
+    --track-frontend-width: 500px;
+    --track-backend-width: 400px;
+    --track-cloud-width: 300px;
+    --track-frontend-width-mobile: 75vw;
+    --track-backend-width-mobile: 60vw;
+    --track-cloud-width-mobile: 45vw;
+    --aspect-ratio: 1.33;
 }
 
 html, body {
