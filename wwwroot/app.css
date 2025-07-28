@@ -6,12 +6,12 @@
     --gray: #6b7688;
     --background: #FFFFFF;
     --text: #3A4242;
-    --track-frontend-width: 500px;
-    --track-backend-width: 400px;
+    --track-frontend-width: 460px;
+    --track-backend-width: 380px;
     --track-cloud-width: 300px;
-    --track-frontend-width-mobile: 75vw;
-    --track-backend-width-mobile: 60vw;
-    --track-cloud-width-mobile: 45vw;
+    --track-frontend-width-mobile: 60vw;
+    --track-backend-width-mobile: 50vw;
+    --track-cloud-width-mobile: 40vw;
     --aspect-ratio: 1.33;
 }
 

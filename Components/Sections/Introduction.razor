@@ -2,6 +2,16 @@
 
 <div class="intro__container">
     <div class="left-column">
+        <div class="intro__text">
+            <h1>
+                <span>@((MarkupString)DisplayedIntroWithBreaks)</span>
+                <span style="color: var(--lightBlue);">@displayedHighlight</span>
+                <span class="typing-cursor">|</span>
+            </h1>
+        </div>
+    </div>
+
+    <div class="right-column">
         <div class="image-border">
             <div class="dashed-rectangle frontend"></div>
             <div class="dashed-rectangle backend"></div>
@@ -61,9 +71,8 @@
                 </div>
             </div>
 
-            <!-- Center image -->
             <div class="intro__header-image">
-                <img src="images/Headshot.png" alt="Me :)" />
+                <img src="images/Headshot2.png" alt="Me :)" />
             </div>
         </div>
 
@@ -74,19 +83,16 @@
             </div>
         }
     </div>
-
-    <div class="right-column">
-        <div class="intro__text">
-            <h1>@(string.IsNullOrEmpty(displayedText) ? " " : displayedText)<span class="typing-cursor">|</span></h1>
-        </div>
-    </div>
 </div>
 
 @code {
     private string? selectedTech;
     private ElementReference techLabelRef;
-    private string fullText = "Hi, I'm Chase — a Full Stack .NET Developer.";
-    private string displayedText = "";
+    private string introText = "Hi, I'm Chase\nA Full Stack .NET Developer\n";
+    private string highlightText = "Let's build something great together!";
+    private string displayedIntro = "";
+    private string displayedHighlight = "";
+    private string DisplayedIntroWithBreaks => displayedIntro.Replace("\n", "<br />");
     private int charIndex = 0;
     private Timer? typingTimer;
 
@@ -112,15 +118,23 @@
 
     private void TypingCallback(object? state)
     {
-        if (charIndex < fullText.Length)
+        if (charIndex < introText.Length)
         {
-            displayedText = fullText.Substring(0, charIndex + 1);
-            charIndex++;
-            InvokeAsync(StateHasChanged);
+            displayedIntro = introText.Substring(0, charIndex + 1);
+        }
+        else if (charIndex < introText.Length + highlightText.Length)
+        {
+            int highlightIndex = charIndex - introText.Length;
+            displayedHighlight = highlightText.Substring(0, highlightIndex + 1);
         }
         else
         {
             typingTimer?.Dispose();
+            return;
         }
+
+        charIndex++;
+        InvokeAsync(StateHasChanged);
     }
+
 }
